@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<PackageId>Dreamine.Communication.Abstractions</PackageId>
+		<Version>1.0.0</Version>
+		<Authors>Dreamine Core Team</Authors>
+		<Company>Dreamine</Company>
+		<Description>Abstraction package for Dreamine Communication, including message contracts, transport interfaces, connection lifecycle contracts, options, and common communication models.</Description>
+		<PackageTags>dreamine;communication;abstractions;messaging;transport;contracts</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/CodeMaru-Dreamine/Dreamine.Communication.Abstractions</RepositoryUrl>
+		<Title>Dreamine.Communication.Abstractions</Title>
+		<Copyright>© 2026 Dreamine Core Team. All rights reserved.</Copyright>
+		<PackageProjectUrl>https://github.com/CodeMaru-Dreamine/Dreamine.Communication.FullKit</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>icon.png</PackageIcon>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="icon.png" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+</Project>
