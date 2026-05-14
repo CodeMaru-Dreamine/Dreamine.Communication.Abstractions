@@ -339,6 +339,45 @@ public sealed class MachineMessageService
 }
 ```
 
+End-to-end flow using only the abstractions plus a concrete `IMessageBus` implementation:
+
+```csharp
+using System.Text;
+using Dreamine.Communication.Abstractions.Interfaces;
+using Dreamine.Communication.Abstractions.Models;
+
+// IMessageBus is provided by a concrete package, e.g. InMemoryMessageBus
+// from Dreamine.Communication.Core or RabbitMqMessageBus from
+// Dreamine.Communication.RabbitMQ.
+IMessageBus bus = /* concrete implementation */;
+
+await bus.ConnectAsync();
+
+await bus.SubscribeAsync(
+    "machine.command.start",
+    (message, _) =>
+    {
+        var text = Encoding.UTF8.GetString(message.Payload);
+        Console.WriteLine($"RX {message.Name}: {text}");
+        return Task.CompletedTask;
+    });
+
+await bus.PublishAsync(new MessageEnvelope
+{
+    Name = "Machine.Start",
+    Route = "machine.command.start",
+    Payload = Encoding.UTF8.GetBytes("go"),
+    Headers = new Dictionary<string, string>
+    {
+        ["ContentType"] = "text/plain"
+    }
+});
+
+await bus.DisconnectAsync();
+```
+
+Application code depends only on `IMessageBus` and `MessageEnvelope`. The concrete transport (in-memory, RabbitMQ, or a transport-backed bus through `TransportMessageBusAdapter`) can be replaced without changing this code.
+
 ## Design Principles
 
 - Keep abstraction contracts independent from concrete implementations.

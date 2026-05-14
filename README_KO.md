@@ -339,6 +339,45 @@ public sealed class MachineMessageService
 }
 ```
 
+추상화와 구체 `IMessageBus` 구현체만으로 동작하는 엔드투엔드 흐름은 다음과 같습니다.
+
+```csharp
+using System.Text;
+using Dreamine.Communication.Abstractions.Interfaces;
+using Dreamine.Communication.Abstractions.Models;
+
+// IMessageBus는 구체 패키지에서 제공합니다.
+// 예: Dreamine.Communication.Core의 InMemoryMessageBus,
+//     Dreamine.Communication.RabbitMQ의 RabbitMqMessageBus 등.
+IMessageBus bus = /* 구체 구현체 */;
+
+await bus.ConnectAsync();
+
+await bus.SubscribeAsync(
+    "machine.command.start",
+    (message, _) =>
+    {
+        var text = Encoding.UTF8.GetString(message.Payload);
+        Console.WriteLine($"RX {message.Name}: {text}");
+        return Task.CompletedTask;
+    });
+
+await bus.PublishAsync(new MessageEnvelope
+{
+    Name = "Machine.Start",
+    Route = "machine.command.start",
+    Payload = Encoding.UTF8.GetBytes("go"),
+    Headers = new Dictionary<string, string>
+    {
+        ["ContentType"] = "text/plain"
+    }
+});
+
+await bus.DisconnectAsync();
+```
+
+애플리케이션 코드는 `IMessageBus`와 `MessageEnvelope`에만 의존합니다. InMemory, RabbitMQ, `TransportMessageBusAdapter` 기반 Transport 어느 쪽으로 바꾸어도 이 코드는 변경되지 않습니다.
+
 ## 설계 원칙
 
 - 추상 계약은 구체 구현체에 의존하지 않습니다.
