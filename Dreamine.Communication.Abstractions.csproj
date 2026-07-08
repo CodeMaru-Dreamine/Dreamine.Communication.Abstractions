@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 
 		<PackageId>Dreamine.Communication.Abstractions</PackageId>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<Authors>Dreamine Core Team</Authors>
 		<Company>Dreamine</Company>
 		<Description>Abstraction package for Dreamine Communication, including message contracts, transport interfaces, connection lifecycle contracts, options, and common communication models.</Description>
