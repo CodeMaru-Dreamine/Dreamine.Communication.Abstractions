@@ -1,10 +1,23 @@
 # Dreamine.Communication.Abstractions
 
+[![CI](https://github.com/CodeMaru-Dreamine/Dreamine.Communication.Abstractions/actions/workflows/ci.yml/badge.svg)](https://github.com/CodeMaru-Dreamine/Dreamine.Communication.Abstractions/actions/workflows/ci.yml)
+[![품질 게이트](https://sonarcloud.io/api/project_badges/measure?project=CodeMaru-Dreamine_Dreamine.Communication.Abstractions&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=CodeMaru-Dreamine_Dreamine.Communication.Abstractions)
+[![보안 등급](https://sonarcloud.io/api/project_badges/measure?project=CodeMaru-Dreamine_Dreamine.Communication.Abstractions&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=CodeMaru-Dreamine_Dreamine.Communication.Abstractions)
+[![커버리지](https://sonarcloud.io/api/project_badges/measure?project=CodeMaru-Dreamine_Dreamine.Communication.Abstractions&metric=coverage)](https://sonarcloud.io/summary/new_code?id=CodeMaru-Dreamine_Dreamine.Communication.Abstractions)
+[![라이선스: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![.NET](https://img.shields.io/badge/.NET-8-512BD4)
+[![NuGet](https://img.shields.io/nuget/v/Dreamine.Communication.Abstractions.svg)](https://www.nuget.org/packages/Dreamine.Communication.Abstractions)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Dreamine.Communication.Abstractions.svg)](https://www.nuget.org/packages/Dreamine.Communication.Abstractions)
+[![문서](https://img.shields.io/badge/Docs-dreamine.kr-38BDF8)](https://dreamine.kr)
+[![가이드](https://img.shields.io/badge/Guide-dreamine.kr-38BDF8)](https://dreamine.kr)
+[![플레이그라운드](https://img.shields.io/badge/Playground-dreamine.kr-7C3AED)](https://dreamine.kr)
+[![책](https://img.shields.io/badge/Book-Practical%20MVVM%20Architecture-black)](https://dreamine.kr)
+
 `Dreamine.Communication.Abstractions`는 Dreamine Communication 계열 패키지에서 사용하는 최하위 계약, 모델, 옵션, 연결 생명주기 인터페이스, enum, 공통 예외를 제공하는 패키지입니다.
 
 이 패키지는 실제 통신 프로토콜을 구현하지 않습니다. TCP, UDP, Serial, RabbitMQ, HTTP, InMemory 메시징 및 향후 추가될 통신 어댑터들이 공통으로 사용할 기반 계약만 정의합니다.
 
-[➡️ English Version](./README.md)
+[➡️ 영문 문서 보기](./README.md)
 
 ## 목적
 

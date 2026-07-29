@@ -1,5 +1,18 @@
 # Dreamine.Communication.Abstractions
 
+[![CI](https://github.com/CodeMaru-Dreamine/Dreamine.Communication.Abstractions/actions/workflows/ci.yml/badge.svg)](https://github.com/CodeMaru-Dreamine/Dreamine.Communication.Abstractions/actions/workflows/ci.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=CodeMaru-Dreamine_Dreamine.Communication.Abstractions&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=CodeMaru-Dreamine_Dreamine.Communication.Abstractions)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=CodeMaru-Dreamine_Dreamine.Communication.Abstractions&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=CodeMaru-Dreamine_Dreamine.Communication.Abstractions)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=CodeMaru-Dreamine_Dreamine.Communication.Abstractions&metric=coverage)](https://sonarcloud.io/summary/new_code?id=CodeMaru-Dreamine_Dreamine.Communication.Abstractions)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![.NET](https://img.shields.io/badge/.NET-8-512BD4)
+[![NuGet](https://img.shields.io/nuget/v/Dreamine.Communication.Abstractions.svg)](https://www.nuget.org/packages/Dreamine.Communication.Abstractions)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Dreamine.Communication.Abstractions.svg)](https://www.nuget.org/packages/Dreamine.Communication.Abstractions)
+[![Docs](https://img.shields.io/badge/Docs-dreamine.kr-38BDF8)](https://dreamine.kr)
+[![Guide](https://img.shields.io/badge/Guide-dreamine.kr-38BDF8)](https://dreamine.kr)
+[![Playground](https://img.shields.io/badge/Playground-dreamine.kr-7C3AED)](https://dreamine.kr)
+[![Book](https://img.shields.io/badge/Book-Practical%20MVVM%20Architecture-black)](https://dreamine.kr)
+
 `Dreamine.Communication.Abstractions` provides the lowest-level contracts, models, options, lifecycle interfaces, enums, and common exceptions used by the Dreamine Communication package family.
 
 This package does **not** implement any concrete communication protocol. It defines the shared foundation used by TCP, UDP, Serial, RabbitMQ, HTTP, in-memory messaging, and future communication adapters.
